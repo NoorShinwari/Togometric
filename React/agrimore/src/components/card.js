@@ -10,7 +10,7 @@ const Card = () => {
     <div className="container  ">
       <div className="card ">
         <div className="row">
-          <div className="col-sm-6 text-left">
+          <div className="col-5 text-left">
             <div className="card-body">
               <h5 className="card-title">RACCOGLITORE</h5>
               <p className="card-text">
@@ -29,7 +29,7 @@ const Card = () => {
               </div>
             </div>
           </div>
-          <div className="col-sm-6 text-right">
+          <div className="col-7 text-right">
             <div className="card-body">
               <a href="#" className="btn btn-primary rounded-pill">
                 CANDIDATI
