@@ -3,7 +3,8 @@ import Card from "./card";
 import Annuncio from "./annuncio";
 import Info from "./info";
 
-const Layout = () => {
+const Layout = (props) => {
+  console.log(props);
   return (
     <div style={{ padding: "40px" }}>
       <Card />

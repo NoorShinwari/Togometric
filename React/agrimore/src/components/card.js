@@ -19,8 +19,8 @@ const Card2 = () => {
       <div className="row ">
         <div className="col ">
           <div className="card-body text-left">
-            <h5 class="card-title">RACCOGLITORE</h5>
-            <div class="card-text ">
+            <h5 className="card-title">RACCOGLITORE</h5>
+            <div className="card-text ">
               <div className="row">
                 <div className="col mb-2">
                   <span>
@@ -48,7 +48,7 @@ const Card2 = () => {
         </div>
         <div className="col">
           <div className="card-body text-right ">
-            <h5 class="card-title">
+            <h5 className="card-title">
               <a
                 href="#"
                 className="btn btn-primary btn-sm rounded-pill"
@@ -60,7 +60,7 @@ const Card2 = () => {
                 <StarsIcon style={{ color: "#F1BA10" }} />
               </span>
             </h5>
-            <div class="card-text">
+            <div className="card-text">
               <div className="row ">
                 <div className="col">
                   <span>
