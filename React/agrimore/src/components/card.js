@@ -83,6 +83,6 @@ const Card2 = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Card2;
