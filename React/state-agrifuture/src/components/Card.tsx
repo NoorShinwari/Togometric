@@ -11,13 +11,38 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
 
-export interface CardProps {}
+export interface CardProps {
+  id: string;
+  name: string;
+  company: string;
+  address: string;
+}
 
-const Card1: React.SFC<CardProps> = () => {
+const Card1: React.SFC<CardProps> = (props) => {
   const history = useHistory();
-  function backPageHandler() {
-    history.push("/last");
+  function backPageHandler(id: string) {
+    history.push("/last", id);
+    console.log(id);
   }
+
+  function addDays(date: Date, days: number) {
+    const copy = new Date(Number(date));
+    copy.setDate(date.getDate() + days);
+    return copy;
+  }
+
+  const date = new Date();
+  const newDate = addDays(date, 10);
+  var days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const today = days[date.getDay()];
 
   return (
     <Card
@@ -29,7 +54,7 @@ const Card1: React.SFC<CardProps> = () => {
           <Col className="text-left">
             <Row>
               <Col>
-                <Card.Title className="text-dark">RACCOGLITORE</Card.Title>
+                <Card.Title className="text-dark">{props.name}</Card.Title>
               </Col>
             </Row>
             <Row>
@@ -37,7 +62,7 @@ const Card1: React.SFC<CardProps> = () => {
                 <FontAwesomeIcon icon={faUser} className="text-primary" />
               </Col>
               <Col md={5} lg={5}>
-                <Card.Text>Raccoglitore</Card.Text>
+                <Card.Text>{props.name}</Card.Text>
               </Col>
             </Row>
 
@@ -46,7 +71,7 @@ const Card1: React.SFC<CardProps> = () => {
                 <FontAwesomeIcon icon={faIndustry} className="text-primary" />
               </Col>
               <Col md={3}>
-                <Card.Text>Multi Spa</Card.Text>
+                <Card.Text>{props.company}</Card.Text>
               </Col>
               <Col md={1}>
                 <FontAwesomeIcon
@@ -55,7 +80,7 @@ const Card1: React.SFC<CardProps> = () => {
                 />
               </Col>
               <Col md={3}>
-                <Card.Text>Torino</Card.Text>
+                <Card.Text>{props.address}</Card.Text>
               </Col>
             </Row>
           </Col>
@@ -63,7 +88,7 @@ const Card1: React.SFC<CardProps> = () => {
             <Row>
               <Col md={{ offset: 7, span: 3 }} lg={{ offset: 9 }}>
                 <Button
-                  onClick={backPageHandler}
+                  onClick={() => backPageHandler(props.id)}
                   size="sm"
                   variant="primary"
                   className="rounded-pill"
@@ -84,7 +109,7 @@ const Card1: React.SFC<CardProps> = () => {
                 />
               </Col>
               <Col md={5} lg={6}>
-                <Card.Text>Da oggi a fino a 20.02.2020</Card.Text>
+                <Card.Text>Da {today} a fino a 2020</Card.Text>
               </Col>
             </Row>
             <Row>
@@ -92,7 +117,7 @@ const Card1: React.SFC<CardProps> = () => {
                 <FontAwesomeIcon icon={faClock} className="text-primary" />
               </Col>
               <Col md={5} lg={{ span: 2 }}>
-                <Card.Text>Oggi</Card.Text>
+                <Card.Text>{today}</Card.Text>
               </Col>
             </Row>
           </Col>

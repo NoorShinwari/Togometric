@@ -3,9 +3,12 @@ import { Card, Row, Col, Image } from "react-bootstrap";
 import germanyFlag from "../assets/images/flag-germany.svg";
 import italianFlag from "../assets/images/flag-italy.svg";
 
-export interface AnnuncioProps {}
+export interface AnnuncioProps {
+  activity: string;
+  requisiti: string;
+}
 
-const Annuncio: React.SFC<AnnuncioProps> = () => {
+const Annuncio: React.SFC<AnnuncioProps> = (props) => {
   return (
     <Card className="shadow p-2 mb-3" style={{ borderRadius: "2rem 2rem" }}>
       <Card.Body className="text-muted">
@@ -21,7 +24,7 @@ const Annuncio: React.SFC<AnnuncioProps> = () => {
                 <Card.Text className="font-weight-bold">Attività</Card.Text>
               </Col>
               <Col xs={12} md={6} lg={6}>
-                <Card.Text>Raccoglitore</Card.Text>
+                <Card.Text>{props.activity}</Card.Text>
               </Col>
             </Row>
             <Row>
@@ -42,7 +45,7 @@ const Annuncio: React.SFC<AnnuncioProps> = () => {
                 </Card.Text>
               </Col>
               <Col xs={12} md={6} lg={6}>
-                <Card.Text>Settimana di 5 giorni</Card.Text>
+                <Card.Text>{Math.floor(Math.random() * 7)} giorni</Card.Text>
               </Col>
             </Row>
           </Col>
@@ -74,7 +77,7 @@ const Annuncio: React.SFC<AnnuncioProps> = () => {
             </Row>
             <Row>
               <Col>
-                <Card.Text>Non sono richieste qualifiche</Card.Text>
+                <Card.Text>{props.requisiti}</Card.Text>
               </Col>
             </Row>
           </Col>

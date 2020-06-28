@@ -1,0 +1,172 @@
+[
+    {
+        "_id": "5ef780fd9cc60e98605a9de7",
+        "index": 0,
+        "isFavorite": false,
+        "name": "Arline Dejesus",
+        "company": "PARAGONIA",
+        "address": "Goochland",
+        "registered": "2015-05-02T10:34:21 -02:00",
+        "friends": [
+            {
+                "id": 0,
+                "name": "Viola Cunningham"
+            },
+            {
+                "id": 1,
+                "name": "Emerson Walsh"
+            },
+            {
+                "id": 2,
+                "name": "Natalia Barnett"
+            }
+        ],
+        "email": "nataliabarnett@paragonia.com",
+        "phone": "+1 (916) 588-2590",
+        "activity": [
+            "fugiat",
+            "quis",
+            "occaecat",
+            "duis",
+            "laborum",
+            "dolore",
+            "non"
+        ]
+    },
+    {
+        "_id": "5ef780fdd7e7f542ee2135a5",
+        "index": 1,
+        "isFavorite": true,
+        "name": "Randi Kaufman",
+        "company": "LYRIA",
+        "address": "Bellamy",
+        "registered": "2015-01-07T02:12:24 -01:00",
+        "friends": [
+            {
+                "id": 0,
+                "name": "Franks Cantu"
+            },
+            {
+                "id": 1,
+                "name": "Angelica Sharpe"
+            },
+            {
+                "id": 2,
+                "name": "Arnold Manning"
+            }
+        ],
+        "email": "arnoldmanning@lyria.com",
+        "phone": "+1 (801) 412-2952",
+        "activity": [
+            "ut",
+            "amet",
+            "sit",
+            "fugiat",
+            "nulla",
+            "officia",
+            "ipsum"
+        ]
+    },
+    {
+        "_id": "5ef780fdb1a50079227dc27e",
+        "index": 2,
+        "isFavorite": true,
+        "name": "Hester Fulton",
+        "company": "QUALITEX",
+        "address": "Gracey",
+        "registered": "2017-06-10T06:45:39 -02:00",
+        "friends": [
+            {
+                "id": 0,
+                "name": "Vicky Lambert"
+            },
+            {
+                "id": 1,
+                "name": "Noemi Robinson"
+            },
+            {
+                "id": 2,
+                "name": "Garrison Wilcox"
+            }
+        ],
+        "email": "garrisonwilcox@qualitex.com",
+        "phone": "+1 (981) 520-3250",
+        "activity": [
+            "duis",
+            "magna",
+            "eiusmod",
+            "ipsum",
+            "id",
+            "eu",
+            "mollit"
+        ]
+    },
+    {
+        "_id": "5ef780fd04c3b6083e9085a0",
+        "index": 3,
+        "isFavorite": false,
+        "name": "Schwartz Gallagher",
+        "company": "TECHMANIA",
+        "address": "Summerfield",
+        "registered": "2016-03-07T09:22:28 -01:00",
+        "friends": [
+            {
+                "id": 0,
+                "name": "Alyce Floyd"
+            },
+            {
+                "id": 1,
+                "name": "Cervantes Cannon"
+            },
+            {
+                "id": 2,
+                "name": "Bianca Snow"
+            }
+        ],
+        "email": "biancasnow@techmania.com",
+        "phone": "+1 (884) 592-3993",
+        "activity": [
+            "adipisicing",
+            "adipisicing",
+            "sit",
+            "culpa",
+            "occaecat",
+            "reprehenderit",
+            "laboris"
+        ]
+    },
+    {
+        "_id": "5ef780fdd9bde39e6cee2bf7",
+        "index": 4,
+        "isFavorite": true,
+        "name": "Ursula Wallace",
+        "company": "ACCEL",
+        "address": "Corriganville",
+        "registered": "2014-06-14T08:23:54 -02:00",
+        "friends": [
+            {
+                "id": 0,
+                "name": "Winters Mcbride"
+            },
+            {
+                "id": 1,
+                "name": "Yvette Sargent"
+            },
+            {
+                "id": 2,
+                "name": "Mullen Cotton"
+            }
+        ],
+        "email": "mullencotton@accel.com",
+        "phone": "+1 (922) 468-2874",
+        "activity": [
+            "do",
+            "laborum",
+            "consectetur",
+            "consectetur",
+            "consequat",
+            "dolor",
+            "occaecat"
+        ]
+    }
+]
