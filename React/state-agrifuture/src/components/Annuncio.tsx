@@ -1,11 +1,15 @@
 import * as React from "react";
 import { Card, Row, Col, Image } from "react-bootstrap";
+import { faUtensils, faBed } from "@fortawesome/free-solid-svg-icons";
 import germanyFlag from "../assets/images/flag-germany.svg";
 import italianFlag from "../assets/images/flag-italy.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export interface AnnuncioProps {
   activity: string;
-  requisiti: string;
+  requisiti1: string;
+  requisiti2: string;
+  requisiti3: string;
 }
 
 const Annuncio: React.SFC<AnnuncioProps> = (props) => {
@@ -20,32 +24,28 @@ const Annuncio: React.SFC<AnnuncioProps> = (props) => {
               </Col>
             </Row>
             <Row>
-              <Col xs={12} md={6} lg={6}>
-                <Card.Text className="font-weight-bold">Attività</Card.Text>
-              </Col>
-              <Col xs={12} md={6} lg={6}>
-                <Card.Text>{props.activity}</Card.Text>
+              <Col>
+                <p>
+                  <span className="mr-3 h6">Attività</span>
+                  {props.activity}
+                </p>
               </Col>
             </Row>
             <Row>
-              <Col xs={12} md={6} lg={6}>
-                <Card.Text className="font-weight-bold">
-                  Orario di lavoro
-                </Card.Text>
-              </Col>
-              <Col xs={12} md={6} lg={6}>
-                <Card.Text>Full-time</Card.Text>
+              <Col>
+                <p>
+                  <span className="mr-3 h6">Orario di lavoro</span>
+                  Full-time
+                </p>
               </Col>
             </Row>
 
             <Row>
-              <Col xs={12} md={6} lg={6}>
-                <Card.Text className="font-weight-bold">
-                  Orario settimanale
-                </Card.Text>
-              </Col>
-              <Col xs={12} md={6} lg={6}>
-                <Card.Text>{Math.floor(Math.random() * 7)} giorni</Card.Text>
+              <Col>
+                <p>
+                  <span className="mr-3 h6">Orario settimanale</span>
+                  {Math.floor(Math.random() * 7)} giorni
+                </p>
               </Col>
             </Row>
           </Col>
@@ -57,18 +57,31 @@ const Annuncio: React.SFC<AnnuncioProps> = (props) => {
             </Row>
             <Row>
               <Col>
-                <Card.Text>Previsto pranzo e cena</Card.Text>
+                <p>
+                  <span className="mr-3">
+                    <FontAwesomeIcon
+                      icon={faUtensils}
+                      className="text-warning"
+                    />
+                  </span>
+                  Previsto pranzo e cena
+                </p>
               </Col>
             </Row>
             <Row>
               <Col>
-                <Card.Text>Previsto posto letto</Card.Text>
+                <p>
+                  <span className="mr-3">
+                    <FontAwesomeIcon icon={faBed} className="text-warning" />
+                  </span>
+                  Previsto posto letto
+                </p>
               </Col>
             </Row>
           </Col>
         </Row>
 
-        <Row className="mt-4">
+        <Row>
           <Col>
             <Row>
               <Col>
@@ -77,7 +90,9 @@ const Annuncio: React.SFC<AnnuncioProps> = (props) => {
             </Row>
             <Row>
               <Col>
-                <Card.Text>{props.requisiti}</Card.Text>
+                <p>{props.requisiti1}</p>
+                <p>{props.requisiti2}</p>
+                <p>{props.requisiti3}</p>
               </Col>
             </Row>
           </Col>
@@ -91,17 +106,19 @@ const Annuncio: React.SFC<AnnuncioProps> = (props) => {
             </Row>
             <Row>
               <Col>
-                <Card.Text>
-                  Dovresti comprendere almeno una di queste lingue.
-                </Card.Text>
+                <p>Dovresti comprendere almeno una di queste lingue.</p>
               </Col>
             </Row>
             <Row>
-              <Col xs={2} md={2}>
-                <Image src={germanyFlag} width="30" height="30" />
-              </Col>
-              <Col xs={2} md={2}>
-                <Image src={italianFlag} width="30" height="30" />
+              <Col>
+                <p>
+                  <span className="mr-3">
+                    <Image src={germanyFlag} width="30" height="30" />
+                  </span>
+                  <span className="mr-3">
+                    <Image src={italianFlag} width="30" height="30" />
+                  </span>
+                </p>
               </Col>
             </Row>
           </Col>

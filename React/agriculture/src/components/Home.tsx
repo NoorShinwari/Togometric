@@ -5,10 +5,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { useHistory } from "react-router-dom";
 import "./Home.scss";
+import Search from "./Search";
 let Home = () => {
+  let data = { search: "", place: "", position: "" };
+
   const history = useHistory();
-  function anotherPage() {
-    history.push("/next");
+
+  function anotherPage(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    console.log(data);
+
+    history.push("/next", data);
   }
   return (
     <Container className="mb-3">
@@ -16,7 +23,7 @@ let Home = () => {
         <Col>
           <Card className="rounded-pill shadow">
             <Card.Body>
-              <Form className="px-3">
+              <Form className="px-3" onSubmit={anotherPage}>
                 <Form.Row>
                   <Form.Group
                     as={Col}
@@ -28,7 +35,11 @@ let Home = () => {
                     <Form.Label className="text-muted">
                       <strong>COSA CERCHI?</strong>
                     </Form.Label>
-                    <Form.Control className="rounded-pill" />
+                    <Form.Control
+                      className="rounded-pill"
+                      onChange={(e) => (data.search = e.target.value)}
+                      defaultValue={data.search}
+                    />
                   </Form.Group>
                   <Form.Group
                     as={Col}
@@ -41,12 +52,14 @@ let Home = () => {
                       <strong>DOVE CERCHI?</strong>
                     </Form.Label>
                     <Form.Control
-                      as="select"
-                      value="Choose..."
+                      // as="select"
+                      // value="Choose..."
                       className="rounded-pill"
+                      onChange={(e) => (data.place = e.target.value)}
+                      defaultValue={data.place}
                     >
-                      <option>Choose...</option>
-                      <option>...</option>
+                      {/* <option>Choose...</option>
+                      <option>...</option> */}
                     </Form.Control>
                   </Form.Group>
                   <Form.Group
@@ -59,17 +72,17 @@ let Home = () => {
                     <Form.Label className="text-muted">
                       <strong>CHE POSIZIONE?</strong>
                     </Form.Label>
-                    <Form.Control className="rounded-pill" />
+                    <Form.Control
+                      className="rounded-pill"
+                      onChange={(e) => (data.position = e.target.value)}
+                      defaultValue={data.position}
+                    />
                   </Form.Group>
+
                   <Button
-                    onClick={anotherPage}
-                    as={Col}
-                    xs={12}
-                    md={2}
-                    sm="1"
                     variant="warning"
                     type="submit"
-                    className="rounded-pill btn-search"
+                    className="rounded-pill "
                   >
                     <FontAwesomeIcon icon={faSearch} size="3x" color="white" />
                   </Button>

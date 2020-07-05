@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Location } from "history";
 
-import Card1 from "./Card";
+import Card from "./Card";
 import Annuncio from "./Annuncio";
 import Info from "./Info";
 import { Container, Row, Col, ProgressBar } from "react-bootstrap";
 import { Job } from "./job.model";
 import data from "../assets/data.json";
 import { useHistory } from "react-router-dom";
-import { Z_FILTERED } from "zlib";
 
 const DetailPage = () => {
   const [jobs, setJobs] = useState<Job[]>([]);
@@ -29,28 +28,37 @@ const DetailPage = () => {
               {jobs
                 .filter((e) => e._id === id)
                 .map((job) => (
-                  <Card1
+                  <Card
                     name={job.name}
                     company={job.company}
                     address={job.address}
                     id={job._id}
+                    dateFrom={job.dateFrom}
+                    dateTo={job.dateTo}
                   />
                 ))}
             </Col>
           </Row>
           <Row>
-            <Col lg={7}>
+            <Col lg={8}>
               {filtered.map((job) => (
-                <Annuncio activity={job.name} requisiti={job.email} />
+                <Annuncio
+                  activity={job.name}
+                  requisiti1={job.requisiti1}
+                  requisiti2={job.requisiti2}
+                  requisiti3={job.requisiti3}
+                />
               ))}
             </Col>
-            <Col lg={5}>
-              <Info />
+            <Col lg={4}>
+              {filtered.map((job) => (
+                <Info name={job.name} email={job.email} phone={job.phone} />
+              ))}
             </Col>
           </Row>
         </Col>
       </Row>
-      <ProgressBar variant="success" now={Math.random() * 100} />
+      <ProgressBar variant="success" animated now={Math.random() * 100} />
     </Container>
   );
 };

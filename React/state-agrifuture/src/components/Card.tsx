@@ -16,6 +16,8 @@ export interface CardProps {
   name: string;
   company: string;
   address: string;
+  dateTo: string;
+  dateFrom: string;
 }
 
 const Card1: React.SFC<CardProps> = (props) => {
@@ -58,35 +60,35 @@ const Card1: React.SFC<CardProps> = (props) => {
               </Col>
             </Row>
             <Row>
-              <Col md={1} lg={1}>
-                <FontAwesomeIcon icon={faUser} className="text-primary" />
-              </Col>
-              <Col md={5} lg={5}>
-                <Card.Text>{props.name}</Card.Text>
+              <Col>
+                <span className="mr-3">
+                  <FontAwesomeIcon icon={faUser} className="text-primary" />
+                </span>
+                {props.name}
               </Col>
             </Row>
 
             <Row>
-              <Col md={1}>
-                <FontAwesomeIcon icon={faIndustry} className="text-primary" />
+              <Col lg={4}>
+                <span className="mr-3">
+                  <FontAwesomeIcon icon={faIndustry} className="text-primary" />
+                </span>
+                {props.company}
               </Col>
-              <Col md={3}>
-                <Card.Text>{props.company}</Card.Text>
-              </Col>
-              <Col md={1}>
-                <FontAwesomeIcon
-                  icon={faMapMarkerAlt}
-                  className="text-warning"
-                />
-              </Col>
-              <Col md={3}>
-                <Card.Text>{props.address}</Card.Text>
+              <Col lg={4}>
+                <span className="mr-3">
+                  <FontAwesomeIcon
+                    icon={faMapMarkerAlt}
+                    className="text-warning"
+                  />
+                </span>
+                {props.address}
               </Col>
             </Row>
           </Col>
           <Col className="text-right">
             <Row>
-              <Col md={{ offset: 7, span: 3 }} lg={{ offset: 9 }}>
+              <Col>
                 <Button
                   onClick={() => backPageHandler(props.id)}
                   size="sm"
@@ -95,29 +97,29 @@ const Card1: React.SFC<CardProps> = (props) => {
                 >
                   CONDITATI
                 </Button>
-              </Col>
-              <Col md={2} lg={{ offset: 1, span: 1 }}>
-                <FontAwesomeIcon icon={faStar} className="text-warning" />
+                <span className="ml-2">
+                  <FontAwesomeIcon icon={faStar} className="text-warning" />
+                </span>
               </Col>
             </Row>
 
             <Row>
-              <Col md={{ offset: 5, span: 1 }} lg={{ offset: 5, span: 1 }}>
-                <FontAwesomeIcon
-                  icon={faCalendarAlt}
-                  className="text-primary"
-                />
-              </Col>
-              <Col md={5} lg={6}>
-                <Card.Text>Da {today} a fino a 2020</Card.Text>
+              <Col>
+                <span className="mr-3">
+                  <FontAwesomeIcon
+                    icon={faCalendarAlt}
+                    className="text-primary"
+                  />
+                </span>
+                Da {props.dateFrom} fino a {props.dateTo}
               </Col>
             </Row>
             <Row>
-              <Col md={{ offset: 5, span: 1 }} lg={{ offset: 8 }}>
-                <FontAwesomeIcon icon={faClock} className="text-primary" />
-              </Col>
-              <Col md={5} lg={{ span: 2 }}>
-                <Card.Text>{today}</Card.Text>
+              <Col>
+                <span className="mr-3">
+                  <FontAwesomeIcon icon={faClock} className="text-primary" />
+                </span>
+                {today}
               </Col>
             </Row>
           </Col>

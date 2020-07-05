@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,9 +10,13 @@ interface HomeProps {
   id: string;
 }
 let Home: React.SFC<HomeProps> = (props) => {
+  const [name, setName] = useState<string>("");
+
   const history = useHistory();
-  function anotherPage() {
-    history.push("/next");
+  function anotherPage(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    history.push("/next", name);
+    console.log(name);
   }
   return (
     <Container className="mb-3">
@@ -20,7 +24,7 @@ let Home: React.SFC<HomeProps> = (props) => {
         <Col>
           <Card className="rounded-pill shadow">
             <Card.Body>
-              <Form className="px-3">
+              <Form className="px-3" onSubmit={anotherPage}>
                 <Form.Row>
                   <Form.Group
                     as={Col}
@@ -32,7 +36,11 @@ let Home: React.SFC<HomeProps> = (props) => {
                     <Form.Label className="text-muted">
                       <strong>COSA CERCHI?</strong>
                     </Form.Label>
-                    <Form.Control className="rounded-pill" />
+                    <Form.Control
+                      className="rounded-pill"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                    />
                   </Form.Group>
                   <Form.Group
                     as={Col}
@@ -48,6 +56,7 @@ let Home: React.SFC<HomeProps> = (props) => {
                       as="select"
                       value="Choose..."
                       className="rounded-pill"
+                      readOnly
                     >
                       <option>Choose...</option>
                       <option>...</option>
@@ -63,14 +72,9 @@ let Home: React.SFC<HomeProps> = (props) => {
                     <Form.Label className="text-muted">
                       <strong>CHE POSIZIONE?</strong>
                     </Form.Label>
-                    <Form.Control className="rounded-pill" />
+                    <Form.Control className="rounded-pill" readOnly />
                   </Form.Group>
                   <Button
-                    onClick={() => anotherPage()}
-                    as={Col}
-                    xs={12}
-                    md={2}
-                    sm="1"
                     variant="warning"
                     type="submit"
                     className="rounded-pill btn-search"

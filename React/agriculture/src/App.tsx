@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import SiteNav from "./components/SiteNav";
 import Content from "./components/Content";
+import FormCustom from "./components/Form";
 
 function App() {
   return (

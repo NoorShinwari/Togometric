@@ -7,7 +7,9 @@ export interface Job {
   email: string;
   phone: string;
   address: string;
-  about: string;
-  tags: string[];
-  friends: { id: number; name: string }[];
+  requisiti1: string;
+  requisiti2: string;
+  requisiti3: string;
+  dateTo: string;
+  dateFrom: string;
 }
