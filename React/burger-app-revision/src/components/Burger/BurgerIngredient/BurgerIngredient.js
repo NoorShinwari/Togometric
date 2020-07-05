@@ -1,6 +1,5 @@
 import React from "react";
 import classes from "./BurgerIngredient.module.css";
-import Aux from "../../../hoc/ReactAux";
 import PropTypes from "prop-types";
 
 const BurgerIngredient = (props) => {

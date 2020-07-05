@@ -12,9 +12,21 @@ const controls = [
 const BuildControls = (props) => {
   return (
     <div className={classes.BulidControls}>
+      <p>
+        Current Price: <strong>$ {props.price.toFixed(2)}</strong>
+      </p>
       {controls.map((e) => (
-        <BuildControl type={e.type} label={e.label} key={e.label} />
+        <BuildControl
+          label={e.label}
+          key={e.label}
+          ingredientAdded={() => props.ingredientAdded(e.type)}
+          ingredientRemoved={() => props.ingredientRemoved(e.type)}
+          disabled={props.disabled[e.type]}
+        />
       ))}
+      <button className={classes.OrderButton} disabled={!props.purchasable}>
+        ORDER NOW
+      </button>
     </div>
   );
 };
